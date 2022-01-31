@@ -13,6 +13,7 @@ import play.i18n.Messages;
 import play.i18n.MessagesApi;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
+import play.mvc.BodyParser;
 import play.mvc.Http;
 import play.mvc.Result;
 import play.test.Helpers;

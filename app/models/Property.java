@@ -3,18 +3,27 @@ package models;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "properties")
 public class Property {
 
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Column
     public String nameOfBuilding;
+    @Column
     public String streetName;
+    @Column
     public String streetNumber;
+    @Column
     public Integer postalCode;
+    @Column
     public String city;
+    @Column
     public String country;
+    @Column
     public String description;
 
     public Long getId() {

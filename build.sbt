@@ -2,7 +2,7 @@ lazy val root = (project in file("."))
   .enablePlugins(PlayJava)
   .settings(
     name := """property-viewer""",
-    version := "1.0-SNAPSHOT",
+    version := "1.0.1-SNAPSHOT",
     scalaVersion := "2.13.6",
     libraryDependencies ++= Seq(
       guice,

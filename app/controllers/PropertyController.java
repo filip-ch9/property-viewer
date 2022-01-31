@@ -1,14 +1,24 @@
 package controllers;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.Property;
 import models.PropertyRepository;
+import play.data.DynamicForm;
 import play.data.FormFactory;
+import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
+import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
 
 import javax.inject.Inject;
+import java.io.DataInput;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
 
@@ -43,10 +53,21 @@ public class PropertyController extends Controller {
                 .thenApplyAsync(p -> redirect(routes.PropertyController.index()), ec.current());
     }
 
+    public CompletionStage<Result> addListOfProperties(final Http.RequestBody request) {
+        List<Property> properties = new ArrayList<>();
+        return propertyRepository
+            .addAll(properties)
+            .thenApplyAsync(p -> redirect(routes.PropertyController.index()), ec.current());
+    }
+
     public CompletionStage<Result> getProperty() {
         return propertyRepository
                 .list()
                 .thenApplyAsync(propertyStream -> ok(toJson(propertyStream.collect(Collectors.toList()))), ec.current());
+    }
+
+    public Result deleteProperty(Long id) {
+        return propertyRepository.deleteById(id) ? ok() : notFound();
     }
 
 }
