@@ -1,0 +1,41 @@
+commit 87216447a533f0485e9a30853e943c725e23865c
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Mon Jan 31 15:47:06 2022 +0100
+
+    Added table view to gui
+
+commit 5ccb4cbc75982757eb970f1c52c91146c9f0eb6c
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Mon Jan 31 13:21:26 2022 +0100
+
+    updated application.log file
+
+commit 7a3cadcb8b1d4e8b8ad3d03ddb78587509e4124b
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Mon Jan 31 13:20:24 2022 +0100
+
+    Added location finder service to get coordinates for each building saved, changed back to h2 database because it is easier to use inmemory fake database, updated build version
+
+commit bd2326e11dd0ee798a3084c2c80085aa94136d6b
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Mon Jan 31 10:01:53 2022 +0100
+
+    Changed default h2 database to mysql database, and added method to save multiple entities
+
+commit 6acd8851091df26827b80aa3158d0ed65f28e7c7
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Mon Jan 31 08:42:51 2022 +0100
+
+    Implemented and added route for delete method, updated build version
+
+commit 5b962be6b613f9f0e34f0f15f59feb716cc3a10a
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Fri Jan 28 16:41:43 2022 +0100
+
+    Initial commit
+
+commit b95d2ef5954fcbf6fe041c55fc33a523cefea64e
+Author: Filip Churlevski <76533999+filip-ch9@users.noreply.github.com>
+Date:   Fri Jan 28 16:19:39 2022 +0100
+
+    Initial commit

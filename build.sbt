@@ -2,12 +2,12 @@ lazy val root = (project in file("."))
   .enablePlugins(PlayJava)
   .settings(
     name := """property-viewer""",
-    version := "1.0.4-SNAPSHOT",
+    version := "1.0.5-SNAPSHOT",
     scalaVersion := "2.13.6",
     libraryDependencies ++= Seq(
       guice,
       javaJpa,
-      "com.h2database" % "h2" % "1.4.199",
+      "mysql" % "mysql-connector-java" % "5.1.36",
       "org.hibernate" % "hibernate-core" % "5.4.9.Final",
       "com.squareup.okhttp3" % "okhttp" % "4.6.0",
       "org.json" % "json" % "20211205",
