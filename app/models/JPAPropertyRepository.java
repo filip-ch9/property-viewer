@@ -1,10 +1,12 @@
 package models;
 
 import play.db.jpa.JPAApi;
+import services.LocatePropertyService;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -67,6 +69,7 @@ public class JPAPropertyRepository implements PropertyRepository {
     }
 
     private List<Property> saveAll(EntityManager em, List<Property> properties) {
+        properties.forEach(LocatePropertyService::checkPropertyLocation);
         properties.forEach(em::persist);
         return properties;
     }

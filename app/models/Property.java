@@ -8,22 +8,24 @@ public class Property {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
+    private Long id;
 
     @Column
-    public String nameOfBuilding;
+    private String nameOfBuilding;
     @Column
-    public String streetName;
+    private String streetName;
     @Column
-    public String streetNumber;
+    private String streetNumber;
     @Column
-    public Integer postalCode;
+    private String postalCode;
     @Column
-    public String city;
+    private String city;
     @Column
-    public String country;
+    private String country;
     @Column
-    public String description;
+    private String description;
+    @Column
+    private String coordinates;
 
     public Long getId() {
         return id;
@@ -57,11 +59,11 @@ public class Property {
         this.streetNumber = streetNumber;
     }
 
-    public Integer getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(Integer postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
@@ -87,5 +89,13 @@ public class Property {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(String coordinates) {
+        this.coordinates = coordinates;
     }
 }

@@ -68,14 +68,15 @@ public class UnitTest {
         // Don't need to be this involved in setting up the mock, but for demo it works:
         PropertyRepository repository = mock(PropertyRepository.class);
         Property property = new Property();
-        property.id = 1L;
-        property.nameOfBuilding = "My Building";
-        property.streetName = "Downing street";
-        property.streetNumber = "285/71";
-        property.postalCode = 85044;
-        property.city = "London";
-        property.country = "United Kingdom";
-        property.description = "Three story building";
+        property.setId(1L);
+        property.setNameOfBuilding("My Building");
+        property.setStreetName("Downing street");
+        property.setStreetNumber("285/71");
+        property.setPostalCode("85044");
+        property.setCity("London");
+        property.setCountry("United Kingdom");
+        property.setDescription("Three story building");
+        property.setCoordinates("longitude: 52.5151 latitude: 14.255252");
         when(repository.add(any())).thenReturn(supplyAsync(() -> property));
 
         // Set up the request builder to reflect input

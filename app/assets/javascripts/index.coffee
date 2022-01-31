@@ -9,3 +9,4 @@ $ ->
       $("#properties").append $("<td>").text property.city
       $("#properties").append $("<td>").text property.country
       $("#properties").append $("<td>").text property.description
+      $("#properties").append $("<td>").text property.coordinates
