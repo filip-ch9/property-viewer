@@ -4,7 +4,32 @@
     <script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
     <script type='text/javascript' src='@routes.Assets.at("javascripts/main.js")'></script>
     <h2>Properties</h2>
-    <ul id="properties"></ul>
+    <table class="table" id="properties">
+        <tr class="table">
+            <th>Id</th>
+            <th>Name Of Building</th>
+            <th>Street</th>
+            <th>Number</th>
+            <th>Postal Code</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Description</th>
+            <th>Coordinates</th>
+        </tr>
+        <tbody class="table">
+            <tr class="table">
+                <td id="propertyId"></td>
+                <td id="propertyNameOfBuilding"></td>
+                <td id="streetName"></td>
+                <td id="streetNumber"></td>
+                <td id="postalCode"></td>
+                <td id="city"></td>
+                <td id="country"></td>
+                <td id="description"></td>
+                <td id="coordinates"></td>
+            </tr>
+        </tbody>
+    </table>
     <button class="open-button" onclick="openForm()">Open Form</button>
     <div class="form-popup" id="myForm">
     <form method="POST" class="form-container" action="@routes.PropertyController.addProperty()">
