@@ -106,3 +106,13 @@ java.io.IOException: Unable to download JavaScript from 'http://localhost:3333/a
 2022-01-31 13:14:18,428 [INFO] from play.core.server.AkkaHttpServer in application-akka.actor.internal-dispatcher-4 - Terminating server binding for /0:0:0:0:0:0:0:0:3333
 2022-01-31 13:14:18,459 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-2 - Shutting down connection pool.
 2022-01-31 13:14:18,472 [INFO] from play.core.server.AkkaHttpServer in application-akka.actor.internal-dispatcher-3 - Running provided shutdown stop hooks
+2022-01-31 13:15:21,841 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-11 - Database [default] initialized
+2022-01-31 13:15:21,849 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-11 - Creating Pool for datasource 'default'
+2022-01-31 13:15:21,915 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-11 - datasource [default] bound to JNDI as DefaultDS
+2022-01-31 13:15:22,167 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-11 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2022-01-31 13:15:22,239 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-11 - Application started (Dev) (no global state)
