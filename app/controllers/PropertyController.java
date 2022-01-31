@@ -4,9 +4,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import exceptions.CustomException;
 import models.Property;
 import models.PropertyRepository;
 import play.data.DynamicForm;
+import play.data.Form;
 import play.data.FormFactory;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
@@ -53,11 +55,17 @@ public class PropertyController extends Controller {
                 .thenApplyAsync(p -> redirect(routes.PropertyController.index()), ec.current());
     }
 
-    public CompletionStage<Result> addListOfProperties(final Http.RequestBody request) {
-        List<Property> properties = new ArrayList<>();
-        return propertyRepository
-            .addAll(properties)
-            .thenApplyAsync(p -> redirect(routes.PropertyController.index()), ec.current());
+    public CompletionStage<Result> addListOfProperties(final Http.Request request) {
+        try {
+            String json = request.body().asJson().toString();
+            ObjectMapper objectMapper = new ObjectMapper();
+            List<Property> properties = objectMapper.readValue(json, new TypeReference<List<Property>>() {});
+            return propertyRepository
+                .addAll(properties)
+                .thenApplyAsync(p -> redirect(routes.PropertyController.index()), ec.current());
+        } catch (Exception e){
+            throw new CustomException("Unable to handle request body!", e);
+        }
     }
 
     public CompletionStage<Result> getProperty() {

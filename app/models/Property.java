@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class Property {
 
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
