@@ -1,3 +1,9 @@
+commit e936ca2a9b1523f5dbe70b3ab150ca4b5dd82d37
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Tue Feb 1 18:31:39 2022 +0100
+
+    Updated some gui methods, and updated readme.md
+
 commit 95ba4886e73a23ddb00529c1f1f8b34087c8eb81
 Author: filip-ch9 <filip.churlevski@gmail.com>
 Date:   Tue Feb 1 13:55:25 2022 +0100

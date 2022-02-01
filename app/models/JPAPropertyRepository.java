@@ -85,4 +85,19 @@ public class JPAPropertyRepository implements PropertyRepository {
             return false;
         }
     }
+
+    private Stream<Property> listDescending(EntityManager entityManager) {
+        List<Property> properties = entityManager.createQuery("select p from Property p order by id desc ", Property.class).getResultList();
+        return properties.stream();
+    }
+
+    private Stream<Property> listByCity(EntityManager entityManager) {
+        List<Property> properties = entityManager.createQuery("select p from Property p order by city", Property.class).getResultList();
+        return properties.stream();
+    }
+
+    private Stream<Property> listByCountry(EntityManager entityManager) {
+        List<Property> properties = entityManager.createQuery("select p from Property p order by country ", Property.class).getResultList();
+        return properties.stream();
+    }
 }
