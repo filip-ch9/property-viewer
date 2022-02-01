@@ -18,9 +18,9 @@ Software needed to start the application:\
 ```- [Optional] -> postman for testing the endpoints```\
 ```- create free account on ->```https://www.geoapify.com/geocoding-api
 
-### Build
+### Getting started
 
-Build the application with the command:\
+Build application:\
 ```- git clone the repo, or download code as zip file```\
 ```- unzip if needed```\
 ```- go to app/services/LocatePropertyService.java```\
