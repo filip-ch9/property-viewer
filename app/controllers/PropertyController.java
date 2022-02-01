@@ -41,7 +41,7 @@ public class PropertyController extends Controller {
         Property property = formFactory.form(Property.class).bindFromRequest(request).get();
         return propertyRepository
                 .add(property)
-                .thenApplyAsync(p -> redirect(routes.PropertyController.addProperty()), ec.current());
+                .thenApplyAsync(p -> redirect(routes.PropertyController.show()), ec.current());
     }
 
     public CompletionStage<Result> addListOfProperties(final Http.Request request) {

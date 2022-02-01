@@ -4,6 +4,8 @@
 
 @main("Show All Properties") {
     <h2>Properties</h2>
+    <button class="btn-success"><a class="btn-success" href="@routes.PropertyController.create()">Add</a></button><br>
+    <br>
     <table class="table">
         <tr>
             <th>Id</th>
@@ -15,8 +17,6 @@
             <th>Country</th>
             <th>Description</th>
             <th>Coordinates</th>
-            <th>Add</th>
-            <th>Edit</th>
             <th>Delete</th>
         </tr>
         <tbody>
@@ -31,8 +31,6 @@
                 <td>@property.getCountry()</td>
                 <td>@property.getDescription()</td>
                 <td>@property.getCoordinates()</td>
-                <td><button class="btn-success"><a class="btn-success" href="@routes.PropertyController.create()">Add</a></button></td>
-                <td><button class="btn-warning"><a class="btn-warning" href="@routes.PropertyController.create()">Edit</a></button></td>
                 <td><button class="btn-danger" onclick="sendDeleteRequest(
                     '@routes.PropertyController.deleteProperty(property.getId())',
                         '@routes.PropertyController.show()',

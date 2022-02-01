@@ -4,12 +4,17 @@
 
 # Home page
 GET     /                           controllers.PropertyController.index(req: Request)
++nocsrf
 GET     /show                       controllers.PropertyController.show()
 +nocsrf
 DELETE  /show/:id                   controllers.PropertyController.deleteProperty(id: Long)
++nocsrf
 GET     /create                     controllers.PropertyController.create(req: Request)
++nocsrf
 POST    /addProperty                controllers.PropertyController.addProperty(req: Request)
++nocsrf
 POST    /properties/addAll          controllers.PropertyController.addListOfProperties(req: Request)
++nocsrf
 GET     /properties                 controllers.PropertyController.getProperty()
 
 # Map static resources from the /public folder to the /assets URL path

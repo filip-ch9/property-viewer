@@ -1,3 +1,21 @@
+commit 95ba4886e73a23ddb00529c1f1f8b34087c8eb81
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Tue Feb 1 13:55:25 2022 +0100
+
+    Finally got the GUI working XD, added some changes to routes and controller, also modified repository, and started using bootstrap
+
+commit 0ad3ebd333aaf3bdaf47310f505ee21a09047da9
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Tue Feb 1 01:41:47 2022 +0100
+
+    made changes to view added bootstrap classes, and inserted dummy json data to fill database
+
+commit 539bf6571cc35735c8115680946366a2ea9418cf
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Mon Jan 31 16:18:02 2022 +0100
+
+    Some minor changes for database config, added gitLog file of all my commits
+
 commit 87216447a533f0485e9a30853e943c725e23865c
 Author: filip-ch9 <filip.churlevski@gmail.com>
 Date:   Mon Jan 31 15:47:06 2022 +0100
