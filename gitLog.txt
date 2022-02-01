@@ -1,3 +1,9 @@
+commit ed640d0aa756aab71b1bb0685593243c2972bfc5
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Tue Feb 1 18:34:43 2022 +0100
+
+    added some basic sql sorting methods
+
 commit e936ca2a9b1523f5dbe70b3ab150ca4b5dd82d37
 Author: filip-ch9 <filip.churlevski@gmail.com>
 Date:   Tue Feb 1 18:31:39 2022 +0100
