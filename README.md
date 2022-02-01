@@ -41,9 +41,10 @@ Build the application with the command:\
 
 ## Testing and Troubleshooting
 
-To fill the database simply run ```dummyJsonData.json``` in Postman on ```http://localhost:9000/properties/addAll```. It
-will check their coordinates. If the information is referring to a building it will get the coordinates, otherwise it will
-return empty or null coordinates. On the GUI you can do simple operations like see all properties, add new or delete them. I have marked every endpoint in routes with ```+nocsrf``` so you don't have to worry getting 
+To fill the database simply run ```dummyJsonData.json``` in Postman on ```http://localhost:9000/properties/addAll```. 
+It will check their coordinates. If the information is referring to a building it will get the coordinates, otherwise it will
+return empty or null coordinates. On the GUI you can do simple operations like see all properties, add new or delete them. 
+I have marked every endpoint in routes with ```+nocsrf``` so you don't have to worry getting 
 ```strict-origin-when-cross-origin``` error. In the test folder there are two tests you can run separately. 
 One is a Simple (JUnit) test that can call all parts of a play app, and the other one is an
 Integration test, that involves starting up an application or a server.
