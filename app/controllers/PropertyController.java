@@ -10,6 +10,8 @@ import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
+import views.html.create;
+import views.html.show;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -39,7 +41,7 @@ public class PropertyController extends Controller {
         Property property = formFactory.form(Property.class).bindFromRequest(request).get();
         return propertyRepository
                 .add(property)
-                .thenApplyAsync(p -> redirect(routes.PropertyController.index()), ec.current());
+                .thenApplyAsync(p -> redirect(routes.PropertyController.addProperty()), ec.current());
     }
 
     public CompletionStage<Result> addListOfProperties(final Http.Request request) {
@@ -61,8 +63,16 @@ public class PropertyController extends Controller {
                 .thenApplyAsync(propertyStream -> ok(toJson(propertyStream.collect(Collectors.toList()))), ec.current());
     }
 
+    public Result show() {
+        return ok(show.render(propertyRepository.getAll()));
+    }
+
     public Result deleteProperty(Long id) {
         return propertyRepository.deleteById(id) ? ok() : notFound();
+    }
+
+    public Result create(final Http.Request request) {
+        return ok(create.apply(request));
     }
 
 }

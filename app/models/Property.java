@@ -1,12 +1,12 @@
 package models;
 
-import javax.persistence.*;
 import io.ebean.Finder;
-import io.ebean.Model;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "properties")
-public class Property extends Model {
+public class Property {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

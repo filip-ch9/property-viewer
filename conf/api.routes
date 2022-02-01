@@ -1,9 +1,0 @@
-# property routes
-
-GET     /v1/properties               controllers.api.PropertyAPIController.index()
-
-# tag routes
-GET     /v1/properties                controllers.api.PropertyAPIController.index()
-POST    /v1/properties                controllers.api.PropertyAPIController.save(req: Request)
-PUT     /v1/properties/:id            controllers.api.PropertyAPIController.update(req: Request, id:Long)
-DELETE  /v1/properties/:id            controllers.api.PropertyAPIController.destroy(id:Long)

@@ -1,8 +1,8 @@
 lazy val root = (project in file("."))
-  .enablePlugins(PlayJava)
+  .enablePlugins(PlayJava, PlayEbean)
   .settings(
     name := """property-viewer""",
-    version := "1.0.6-SNAPSHOT",
+    version := "1.0.7-SNAPSHOT",
     scalaVersion := "2.13.6",
     libraryDependencies ++= Seq(
       guice,
@@ -12,7 +12,6 @@ lazy val root = (project in file("."))
       "com.squareup.okhttp3" % "okhttp" % "4.6.0",
       "org.json" % "json" % "20211205",
       "org.mindrot" % "jbcrypt" % "0.3m",
-      "io.ebean" % "ebean" % "12.9.1",
       javaWs % "test",
       "org.awaitility" % "awaitility" % "4.0.1" % "test",
       "org.assertj" % "assertj-core" % "3.14.0" % "test",
