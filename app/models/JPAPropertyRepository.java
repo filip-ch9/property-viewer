@@ -6,9 +6,6 @@ import services.LocatePropertyService;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -49,11 +46,6 @@ public class JPAPropertyRepository implements PropertyRepository {
         return wrap(entityManager -> deleteProperty(entityManager, id));
     }
 
-    @Override
-    public CompletableFuture<Optional<Property>> findProperty(Property property) {
-        return supplyAsync(() -> wrap(entityManager -> findProperty(entityManager, property)), executionContext);
-    }
-
     private <T> T wrap(Function<EntityManager, T> function) {
         return jpaApi.withTransaction(function);
     }
@@ -72,13 +64,6 @@ public class JPAPropertyRepository implements PropertyRepository {
         properties.forEach(LocatePropertyService::checkPropertyLocation);
         properties.forEach(em::persist);
         return properties;
-    }
-
-    private Optional<Property> findProperty(EntityManager entityManager, Property property) {
-        if (entityManager.contains(property)) {
-            return Optional.ofNullable(property);
-        }
-        return Optional.empty();
     }
 
     private boolean deleteProperty(EntityManager entityManager, Long id) {

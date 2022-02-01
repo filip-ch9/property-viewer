@@ -23,9 +23,8 @@ public class LocatePropertyService {
                 + property.getStreetName() + " "
                 + property.getCity() + " "
                 + property.getPostalCode() + " "
-                + property.getCountry() + " "
-                + property.getNameOfBuilding() + " ")
-            .addQueryParameter("apiKey", "ba81d0fc2ac141af97a44a41a8d7912f")
+                + property.getCountry() + " ")
+            .addQueryParameter("apiKey", "f798a1b72819437d8a71a5122ea67b6e")
             .build();
         Request request = new Request.Builder().url(url).build();
         Response response = client.newCall(request).execute();

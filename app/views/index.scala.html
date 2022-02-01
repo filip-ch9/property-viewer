@@ -1,7 +1,6 @@
 @(implicit request: Http.Request)
 
-@main("Welcome to Play") {
-    <script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+@layout("Welcome to Property viewer") {
     <script type='text/javascript' src='@routes.Assets.at("javascripts/main.js")'></script>
     <h2>Properties</h2>
     <table class="table" id="properties">
@@ -16,25 +15,13 @@
             <th>Description</th>
             <th>Coordinates</th>
         </tr>
-        <tbody class="table">
-            <tr class="table">
-                <td id="propertyId"></td>
-                <td id="propertyNameOfBuilding"></td>
-                <td id="streetName"></td>
-                <td id="streetNumber"></td>
-                <td id="postalCode"></td>
-                <td id="city"></td>
-                <td id="country"></td>
-                <td id="description"></td>
-                <td id="coordinates"></td>
-            </tr>
+        <tbody>
         </tbody>
     </table>
     <button class="open-button" onclick="openForm()">Open Form</button>
     <div class="form-popup" id="myForm">
     <form method="POST" class="form-container" action="@routes.PropertyController.addProperty()">
         <h1>Add Property</h1>
-        @helper.CSRF.formField
         <div style="float: left">
             <label for="nameOfBuilding"><b></b></label>
             <input type="text" placeholder="Enter name of building" name="nameOfBuilding" required>

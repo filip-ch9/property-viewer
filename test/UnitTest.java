@@ -13,7 +13,6 @@ import play.i18n.Messages;
 import play.i18n.MessagesApi;
 import play.libs.Json;
 import play.libs.concurrent.HttpExecutionContext;
-import play.mvc.BodyParser;
 import play.mvc.Http;
 import play.mvc.Result;
 import play.test.Helpers;
@@ -21,6 +20,7 @@ import play.twirl.api.Content;
 
 import javax.validation.Validation;
 import javax.validation.ValidatorFactory;
+import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.ForkJoinPool;
 
@@ -45,7 +45,6 @@ public class UnitTest {
     @Test
     public void checkIndex() {
         Http.RequestBuilder request = CSRFTokenHelper.addCSRFToken(Helpers.fakeRequest("GET", "/"));
-
         PropertyRepository repository = mock(PropertyRepository.class);
         FormFactory formFactory = mock(FormFactory.class);
         HttpExecutionContext ec = new HttpExecutionContext(ForkJoinPool.commonPool());

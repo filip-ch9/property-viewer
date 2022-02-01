@@ -1,10 +1,12 @@
 package models;
 
 import javax.persistence.*;
+import io.ebean.Finder;
+import io.ebean.Model;
 
 @Entity
 @Table(name = "properties")
-public class Property {
+public class Property extends Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,6 +28,8 @@ public class Property {
     private String description;
     @Column
     private String coordinates;
+
+    public static Finder<Long, Property> finder = new Finder<>(Property.class);
 
     public Long getId() {
         return id;

@@ -1,0 +1,82 @@
+[
+  {
+    "nameOfBuilding": "Building1",
+    "streetName": "Belgrave Street",
+    "streetNumber": "29",
+    "postalCode": "DE23 6SS",
+    "city": "Derby",
+    "country": "United Kingdom",
+    "description": "description",
+    "coordinates": ""
+  },
+  {
+    "nameOfBuilding": "building2",
+    "streetName": "Sunnanvikintie",
+    "streetNumber": "2",
+    "postalCode": "02580",
+    "city": "Siuntio",
+    "country": "Finland",
+    "description": "description",
+    "coordinates": ""
+  },
+  {
+    "nameOfBuilding": "building3",
+    "streetName": "Calle de los Evangelios",
+    "streetNumber": "5",
+    "postalCode": "28001",
+    "city": "Madrid",
+    "country": "Spain",
+    "description": "description",
+    "coordinates": ""
+  },
+  {
+    "nameOfBuilding": "building4",
+    "streetName": "Boulevard Allard",
+    "streetNumber": "4",
+    "postalCode": "44100",
+    "city": "Nantes",
+    "country": "France",
+    "description": "description",
+    "coordinates": ""
+  },
+  {
+    "nameOfBuilding": "building5",
+    "streetName": "Park Lane South",
+    "streetNumber": "94-20",
+    "postalCode": "11421",
+    "city": "New York",
+    "country": "United States",
+    "description": "description",
+    "coordinates": ""
+  },
+  {
+    "nameOfBuilding": "building6",
+    "streetName": "Jüngststraße",
+    "streetNumber": "1",
+    "postalCode": "33602",
+    "city": "Bielefeld",
+    "country": "Germany",
+    "description": "description",
+    "coordinates": ""
+  },
+  {
+    "nameOfBuilding": "building7",
+    "streetName": "Ravensberger Straße",
+    "streetNumber": "55",
+    "postalCode": "33602",
+    "city": "Bielefeld",
+    "country": "Germany",
+    "description": "description",
+    "coordinates": ""
+  },
+  {
+    "nameOfBuilding": "building8",
+    "streetName": "Sjundbyntie",
+    "streetNumber": "1",
+    "postalCode": "02580",
+    "city": "Siuntio",
+    "country": "Finland",
+    "description": "description",
+    "coordinates": ""
+  }
+]

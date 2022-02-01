@@ -3,15 +3,10 @@
 # ~~~~
 
 # Home page
-+nocsrf
 GET     /                           controllers.PropertyController.index(req: Request)
-+nocsrf
 POST    /properties                 controllers.PropertyController.addProperty(req: Request)
-+nocsrf
 POST    /properties/addAll          controllers.PropertyController.addListOfProperties(req: Request)
-+nocsrf
 GET     /properties                 controllers.PropertyController.getProperty()
-+nocsrf
 DELETE  /properties/:id             controllers.PropertyController.deleteProperty(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
