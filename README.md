@@ -41,7 +41,7 @@ Build the application with the command:\
 
 ## Testing and Troubleshooting
 
-To fill the database simply run ```dummyJsonData.json``` in Postman on ```http://localhost:9000/properties/addAll```. 
+To populate the database simply run ```dummyJsonData.json``` in Postman on ```http://localhost:9000/properties/addAll```. 
 It will check their coordinates. If the information is referring to a building it will get the coordinates, otherwise it will
 return empty or null coordinates. On the GUI you can do simple operations like see all properties, add new or delete them. 
 I have marked every endpoint in routes with ```+nocsrf``` so you don't have to worry getting 
