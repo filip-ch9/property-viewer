@@ -14,6 +14,7 @@ Software needed to start the application:\
 ```- jdk 1.8 or higher```\
 ```- sbt version 1.6.1 or higher```\
 ```- mysql database started on localhost, or workbench```\
+```- create schema with name: property_viewer```\
 ```- [Optional] -> postman for testing the endpoints```\
 ```- create free account on ->```https://www.geoapify.com/geocoding-api
 

@@ -80,3 +80,8 @@
     play.filters.hosts.AllowedHostsFilter
 
 2022-02-01 18:24:10,341 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-100 - Application started (Dev) (no global state)
+2022-02-01 18:41:56,405 [INFO] from play.api.internal.libs.concurrent.CoordinatedShutdownSupport in pool-12-thread-1 - Starting synchronous coordinated shutdown with ServerStoppedReason reason and 35000 milliseconds timeout
+2022-02-01 18:41:56,406 [INFO] from play.core.server.AkkaHttpServer in pool-12-thread-1 - Stopping Akka HTTP server...
+2022-02-01 18:41:56,408 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-127 - Terminating server binding for /0:0:0:0:0:0:0:0:9000
+2022-02-01 18:41:56,429 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-19 - Shutting down connection pool.
+2022-02-01 18:41:56,439 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-129 - Running provided shutdown stop hooks
