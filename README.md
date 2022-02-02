@@ -49,3 +49,10 @@ I have marked every endpoint in routes with ```+nocsrf``` so you don't have to w
 ```strict-origin-when-cross-origin``` error. In the test folder there are two tests you can run separately. 
 One is a Simple (JUnit) test that can call all parts of a play app, and the other one is an
 Integration test, that involves starting up an application or a server.
+
+## Coming soon
+### Future improvments:
+- Add user entity
+- Relation between entities (User - Property)
+- Authentication (login, register, logout), and security
+- Integrate GUI into React.js
