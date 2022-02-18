@@ -12,21 +12,21 @@ public class Property {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column(name = "name_of_building")
     private String nameOfBuilding;
-    @Column
+    @Column(name = "street_name")
     private String streetName;
-    @Column
+    @Column(name = "street_number")
     private String streetNumber;
-    @Column
+    @Column(name = "postal_code")
     private String postalCode;
-    @Column
+    @Column(name = "city")
     private String city;
-    @Column
+    @Column(name = "country")
     private String country;
-    @Column
+    @Column(name = "description")
     private String description;
-    @Column
+    @Column(name = "coordinates")
     private String coordinates;
 
     public static Finder<Long, Property> finder = new Finder<>(Property.class);

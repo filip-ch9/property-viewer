@@ -15,7 +15,7 @@ public class LocatePropertyService {
   private LocatePropertyService() {}
 
   public static String checkPropertyLocation(Property property) {
-      OkHttpClient client = new OkHttpClient();
+    OkHttpClient client = new OkHttpClient();
     String coordinates = null;
       try {
         HttpUrl url = Objects.requireNonNull(HttpUrl.parse("https://api.geoapify.com/v1/geocode/search")).newBuilder()
@@ -24,7 +24,7 @@ public class LocatePropertyService {
                 + property.getCity() + " "
                 + property.getPostalCode() + " "
                 + property.getCountry() + " ")
-            .addQueryParameter("apiKey", "{YOUR_API}")
+            .addQueryParameter("apiKey", "2c9c8f1857eb48cc890bc01477cbe7b8")
             .build();
         Request request = new Request.Builder().url(url).build();
         Response response = client.newCall(request).execute();

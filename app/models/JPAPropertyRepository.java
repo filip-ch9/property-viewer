@@ -56,6 +56,7 @@ public class JPAPropertyRepository implements PropertyRepository {
     }
 
     private Property insert(EntityManager em, Property property) {
+        LocatePropertyService.checkPropertyLocation(property);
         em.persist(property);
         return property;
     }

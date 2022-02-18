@@ -51,7 +51,7 @@ One is a Simple (JUnit) test that can call all parts of a play app, and the othe
 Integration test, that involves starting up an application or a server.
 
 ## Coming soon
-### Future improvments:
+### Future improvements:
 - Add user entity
 - Relation between entities (User - Property)
 - Authentication (login, register, logout), and security
