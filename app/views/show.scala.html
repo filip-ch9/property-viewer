@@ -3,43 +3,43 @@
 @import helper._
 
 @main("Show All Properties") {
-    <h2>Properties</h2>
-    <button class="btn-success"><a class="btn-success" href="@routes.PropertyController.create()">Add</a></button><br>
-    <br>
-    <table class="table">
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Street</th>
-            <th>Number</th>
-            <th>Postal Code</th>
-            <th>City</th>
-            <th>Country</th>
-            <th>Description</th>
-            <th>Coordinates</th>
-            <th>Update</th>
-            <th>Delete</th>
-        </tr>
-        <tbody>
-            @for(property <- properties) {
-            <tr>
-                <td>@property.getId</td>
-                <td>@property.getNameOfBuilding</td>
-                <td>@property.getStreetName</td>
-                <td>@property.getStreetNumber</td>
-                <td>@property.getPostalCode</td>
-                <td>@property.getCity</td>
-                <td>@property.getCountry</td>
-                <td>@property.getDescription</td>
-                <td>@property.getCoordinates</td>
-                <td><button class="btn-warning"><a class="btn-warning"
-                href="@routes.PropertyController.update(property.getId)">Update</a></button></td>
-                <td><button class="btn-danger" onclick="sendDeleteRequest(
-                    '@routes.PropertyController.deleteProperty(property.getId())',
-                        '@routes.PropertyController.show()',
-                )">Delete</button></td>
-            </tr>
-    }
-        </tbody>
-    </table>
+        <a class="btn btn-success" href="@routes.PropertyController.create()">Add</a><br>
+        <br>
+        <table class="table table-hover"><caption>Properties in our database</caption>
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Street</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Postal Code</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Coordinates</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(property <- properties) {
+                <tr>
+                    <th scope="row">@property.getId</th>
+                    <td>@property.getNameOfBuilding</td>
+                    <td>@property.getStreetName</td>
+                    <td>@property.getStreetNumber</td>
+                    <td>@property.getPostalCode</td>
+                    <td>@property.getCity</td>
+                    <td>@property.getCountry</td>
+                    <td>@property.getDescription</td>
+                    <td>@property.getCoordinates</td>
+                    <td><a class="btn btn-warning"
+                    href="@routes.PropertyController.update(property.getId)">Update</a></td>
+                    <td><a type="submit" class ="btn btn-danger"
+                      href="@routes.PropertyController.deleteProperty(property.getId)"
+                    >Delete</a></td>
+                </tr>
+        }
+            </tbody>
+        </table>
 }

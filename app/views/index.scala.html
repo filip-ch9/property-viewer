@@ -1,9 +1,12 @@
 @(implicit request: Http.Request)
 
 @main("Welcome to Play") {
-    <div class="jumbotron">
-        <h1>Welcome to Property Viewer App</h1>
-        <h3>Build Using Play Framework 2.13.8</h3>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome to Property Viewer App</h1>
+            <h3>Build Using Play Framework 2.13.8</h3>
+        </div>
+        <a class="btn btn-success"
+        href="@routes.PropertyController.show()">Show Properties</a>
     </div>
-    <button class="btn-success"><a class="btn-success" href="@routes.PropertyController.show()">Show Properties</a></button>
 }

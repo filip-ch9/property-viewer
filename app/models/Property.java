@@ -8,6 +8,8 @@ import javax.persistence.*;
 @Table(name = "properties")
 public class Property {
 
+    public static final Finder<Long, Property> finder = new Finder<>(Property.class);
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -29,7 +31,6 @@ public class Property {
     @Column(name = "coordinates")
     private String coordinates;
 
-    public static Finder<Long, Property> finder = new Finder<>(Property.class);
 
     public Long getId() {
         return id;

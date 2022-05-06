@@ -4,23 +4,22 @@
     <h1>Update Property</h1>
     <form method="POST" class="form-container" action="@routes.PropertyController.updateProperty()">
         <div class="form-group">
-            <label for="nameOfBuilding"><b></b></label>
+            <label for="nameOfBuilding"><br></label>
             <input type="text" class="form-control" value="@property.getNameOfBuilding" name="nameOfBuilding" required>
-            <label for="streetName"><b></b></label>
+            <label for="streetName"><br></label>
             <input type="text"  class="form-control" value="@property.getStreetName" name="streetName" required>
-            <label for="streetNumber"><b></b></label>
+            <label for="streetNumber"><br></label>
             <input type="text"  class="form-control" value="@property.getStreetNumber" name="streetNumber" required>
-            <label for="postalCode"><b></b></label>
+            <label for="postalCode"><br></label>
             <input type="text"  class="form-control" value="@property.getPostalCode" name="postalCode" required>
-            <label for="city"><b></b></label>
+            <label for="city"><br></label>
             <input type="text" class="form-control" value="@property.getCity" name="city" required>
-            <label for="country"><b></b></label>
+            <label for="country"><br></label>
             <input type="text"  class="form-control" value="@property.getCountry" name="country" required>
-            <label for="description"><b></b></label>
+            <label for="description"><br></label>
             <textarea class="form-control" name="description" required>@property.getDescription</textarea><br>
-            <button type="submit"  class="btn-success">Update Property</button>
-            <button type="button"  class="btn-danger">
-                <a class="btn-danger" href="@routes.PropertyController.show()">Close</a></button>
+            <button type="submit"  class="btn btn-success">Update Property</button>
+                <a class="btn btn-danger" href="@routes.PropertyController.show()">Close</a>
         </div>
     </form>
 

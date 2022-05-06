@@ -43,7 +43,8 @@ public class PropertyController extends Controller {
     }
 
     public Result deleteProperty(Long id) {
-        return propertyRepository.deleteById(id) ? ok() : notFound();
+        propertyRepository.deleteById(id);
+        return redirect(routes.PropertyController.show());
     }
 
     public Result create(final Http.Request request) {

@@ -15,7 +15,7 @@ Software needed to start the application:\
 ```- sbt version 1.6.1 or higher```\
 ```- mysql database started on localhost, or workbench```\
 ```- create schema with name: property_viewer```\
-```- [Optional] -> postman for testing the endpoints```\
+```- [Optional] -> postman for testing the endpoints```
 
 ### Getting started
 

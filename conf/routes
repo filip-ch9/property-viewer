@@ -7,7 +7,11 @@ GET     /                               controllers.PropertyController.index(req
 +nocsrf
 GET     /show                           controllers.PropertyController.show()
 +nocsrf
-DELETE  /show/:id                       controllers.PropertyController.deleteProperty(id: Long)
+GET     /delete                         controllers.PropertyController.deleteProperty(id: Long)
++nocsrf
+GET     /update/:id                     controllers.PropertyController.update(id: Long)
++nocsrf
+PUT     /update/updateProperty          controllers.PropertyController.updateProperty(req: Request)
 +nocsrf
 GET     /create                         controllers.PropertyController.create(req: Request)
 +nocsrf
@@ -17,10 +21,6 @@ POST    /properties/addAll              controllers.PropertyController.addListOf
 +nocsrf
 GET     /properties                     controllers.PropertyController.getProperty()
 
-+nocsrf
-GET     /show/update/:id                controllers.PropertyController.update(id: Long)
-+nocsrf
-PUT    /show/update/updateProperty      controllers.PropertyController.updateProperty(req: Request)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                   controllers.Assets.at(path="/public", file)
