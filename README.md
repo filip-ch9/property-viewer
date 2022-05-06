@@ -16,26 +16,12 @@ Software needed to start the application:\
 ```- mysql database started on localhost, or workbench```\
 ```- create schema with name: property_viewer```\
 ```- [Optional] -> postman for testing the endpoints```\
-```- create free account on ->```https://www.geoapify.com/geocoding-api
 
 ### Getting started
 
 Build application:\
 ```- git clone the repo, or download code as zip file```\
 ```- unzip if needed```\
-```- go to app/services/LocatePropertyService.java```\
-```- change {YOUR_API_KEY} with one you aquire from geopify ->```
-```java
-    HttpUrl url=Objects.requireNonNull(HttpUrl.parse("https://api.geoapify.com/v1/geocode/search"))
-    .newBuilder()
-    .addQueryParameter("text",property.getStreetNumber()+" "
-    +property.getStreetName()+" "
-    +property.getCity()+" "
-    +property.getPostalCode()+" "
-    +property.getCountry()+" ")
-    .addQueryParameter("apiKey","{YOUR_API_KEY}")
-    .build();
-```   
 ```- import into favorable IDE, or open command line in project root folder```\
 ```- run command -> sbt run```\
 ```- go to  http://localhost:9000```

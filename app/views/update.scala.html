@@ -1,0 +1,28 @@
+@(property: Property)
+
+@main("Update Property") {
+    <h1>Update Property</h1>
+    <form method="POST" class="form-container" action="@routes.PropertyController.updateProperty()">
+        <div class="form-group">
+            <label for="nameOfBuilding"><b></b></label>
+            <input type="text" class="form-control" value="@property.getNameOfBuilding" name="nameOfBuilding" required>
+            <label for="streetName"><b></b></label>
+            <input type="text"  class="form-control" value="@property.getStreetName" name="streetName" required>
+            <label for="streetNumber"><b></b></label>
+            <input type="text"  class="form-control" value="@property.getStreetNumber" name="streetNumber" required>
+            <label for="postalCode"><b></b></label>
+            <input type="text"  class="form-control" value="@property.getPostalCode" name="postalCode" required>
+            <label for="city"><b></b></label>
+            <input type="text" class="form-control" value="@property.getCity" name="city" required>
+            <label for="country"><b></b></label>
+            <input type="text"  class="form-control" value="@property.getCountry" name="country" required>
+            <label for="description"><b></b></label>
+            <textarea class="form-control" name="description" required>@property.getDescription</textarea><br>
+            <button type="submit"  class="btn-success">Update Property</button>
+            <button type="button"  class="btn-danger">
+                <a class="btn-danger" href="@routes.PropertyController.show()">Close</a></button>
+        </div>
+    </form>
+
+
+}

@@ -18,7 +18,11 @@ public interface PropertyRepository {
 
     CompletionStage<Stream<Property>> list();
 
+    CompletionStage<Property> update(Property property);
+
     List<Property> getAll();
+
+    Property getPropertyById(Long id);
 
     boolean deleteById(Long id);
 

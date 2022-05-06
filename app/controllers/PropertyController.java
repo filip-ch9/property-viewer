@@ -12,6 +12,7 @@ import play.mvc.Http;
 import play.mvc.Result;
 import views.html.create;
 import views.html.show;
+import views.html.update;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -37,11 +38,35 @@ public class PropertyController extends Controller {
         return ok(views.html.index.render(request));
     }
 
+    public Result show() {
+        return ok(show.render(propertyRepository.getAll()));
+    }
+
+    public Result deleteProperty(Long id) {
+        return propertyRepository.deleteById(id) ? ok() : notFound();
+    }
+
+    public Result create(final Http.Request request) {
+        return ok(create.apply(request));
+    }
+
+    public Result update(Long id) {
+        Property property = propertyRepository.getPropertyById(id);
+        return ok(update.render(property));
+    }
+
     public CompletionStage<Result> addProperty(final Http.Request request) {
         Property property = formFactory.form(Property.class).bindFromRequest(request).get();
         return propertyRepository
-                .add(property)
-                .thenApplyAsync(p -> redirect(routes.PropertyController.show()), ec.current());
+            .add(property)
+            .thenApplyAsync(p -> redirect(routes.PropertyController.show()), ec.current());
+    }
+
+    public CompletionStage<Result> updateProperty(final Http.Request request) {
+        Property property = formFactory.form(Property.class).bindFromRequest(request).get();
+        return propertyRepository
+            .update(property)
+            .thenApplyAsync(p -> redirect(routes.PropertyController.show()), ec.current());
     }
 
     public CompletionStage<Result> addListOfProperties(final Http.Request request) {
@@ -59,20 +84,8 @@ public class PropertyController extends Controller {
 
     public CompletionStage<Result> getProperty() {
         return propertyRepository
-                .list()
-                .thenApplyAsync(propertyStream -> ok(toJson(propertyStream.collect(Collectors.toList()))), ec.current());
-    }
-
-    public Result show() {
-        return ok(show.render(propertyRepository.getAll()));
-    }
-
-    public Result deleteProperty(Long id) {
-        return propertyRepository.deleteById(id) ? ok() : notFound();
-    }
-
-    public Result create(final Http.Request request) {
-        return ok(create.apply(request));
+            .list()
+            .thenApplyAsync(propertyStream -> ok(toJson(propertyStream.collect(Collectors.toList()))), ec.current());
     }
 
 }

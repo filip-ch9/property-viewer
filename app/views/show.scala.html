@@ -17,25 +17,27 @@
             <th>Country</th>
             <th>Description</th>
             <th>Coordinates</th>
+            <th>Update</th>
             <th>Delete</th>
         </tr>
         <tbody>
             @for(property <- properties) {
             <tr>
-                <td>@property.getId()</td>
-                <td>@property.getNameOfBuilding()</td>
-                <td>@property.getStreetName()</td>
+                <td>@property.getId</td>
+                <td>@property.getNameOfBuilding</td>
+                <td>@property.getStreetName</td>
                 <td>@property.getStreetNumber</td>
-                <td>@property.getPostalCode()</td>
-                <td>@property.getCity()</td>
-                <td>@property.getCountry()</td>
-                <td>@property.getDescription()</td>
-                <td>@property.getCoordinates()</td>
+                <td>@property.getPostalCode</td>
+                <td>@property.getCity</td>
+                <td>@property.getCountry</td>
+                <td>@property.getDescription</td>
+                <td>@property.getCoordinates</td>
+                <td><button class="btn-warning"><a class="btn-warning"
+                href="@routes.PropertyController.update(property.getId)">Update</a></button></td>
                 <td><button class="btn-danger" onclick="sendDeleteRequest(
                     '@routes.PropertyController.deleteProperty(property.getId())',
                         '@routes.PropertyController.show()',
-                )
-                ">Delete</button></td>
+                )">Delete</button></td>
             </tr>
     }
         </tbody>

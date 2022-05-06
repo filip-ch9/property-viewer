@@ -1,5 +1,6 @@
 package models;
 
+import exceptions.CustomException;
 import play.db.jpa.JPAApi;
 import services.LocatePropertyService;
 
@@ -42,6 +43,16 @@ public class JPAPropertyRepository implements PropertyRepository {
     }
 
     @Override
+    public CompletionStage<Property> update(Property property) {
+        return supplyAsync(() -> wrap(entityManager -> updateProperty(entityManager, property)), executionContext);
+    }
+
+    @Override
+    public Property getPropertyById(Long id) {
+        return getProperty(id);
+    }
+
+    @Override
     public List<Property> getAll() {
         return showAll();
     }
@@ -59,6 +70,30 @@ public class JPAPropertyRepository implements PropertyRepository {
         LocatePropertyService.checkPropertyLocation(property);
         em.persist(property);
         return property;
+    }
+
+    private Property getProperty(Long id) {
+        return jpaApi.withTransaction(
+            (Function<EntityManager, Property>) entityManager -> entityManager.createQuery("select p from Property p where p.id = " + id, Property.class).getSingleResult());
+    }
+
+    private Property updateProperty(EntityManager entityManager, Property property){
+        property = entityManager.find(Property.class, property.getId());
+        if (property != null) {
+            Property updateProperty = new Property();
+            updateProperty.setNameOfBuilding(property.getNameOfBuilding());
+            updateProperty.setStreetName(property.getStreetName());
+            updateProperty.setStreetNumber(property.getStreetNumber());
+            updateProperty.setPostalCode(property.getPostalCode());
+            updateProperty.setCity(property.getCity());
+            updateProperty.setCountry(property.getCountry());
+            updateProperty.setDescription(property.getDescription());
+            LocatePropertyService.checkPropertyLocation(property);
+            entityManager.persist(property);
+            return updateProperty;
+        } else {
+            throw new CustomException("Property does not exist!");
+        }
     }
 
     private Stream<Property> list(EntityManager em) {
@@ -90,7 +125,7 @@ public class JPAPropertyRepository implements PropertyRepository {
     private Stream<Property> listDescending(EntityManager entityManager) {
         List<Property> properties = entityManager.createQuery("select p from Property p order by id desc ", Property.class).getResultList();
         return properties.stream();
-    }
+    }//TODO have one function that builds all the sorting functionality
 
     private Stream<Property> listByCity(EntityManager entityManager) {
         List<Property> properties = entityManager.createQuery("select p from Property p order by city", Property.class).getResultList();

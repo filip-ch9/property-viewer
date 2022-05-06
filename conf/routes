@@ -3,19 +3,24 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.PropertyController.index(req: Request)
+GET     /                               controllers.PropertyController.index(req: Request)
 +nocsrf
-GET     /show                       controllers.PropertyController.show()
+GET     /show                           controllers.PropertyController.show()
 +nocsrf
-DELETE  /show/:id                   controllers.PropertyController.deleteProperty(id: Long)
+DELETE  /show/:id                       controllers.PropertyController.deleteProperty(id: Long)
 +nocsrf
-GET     /create                     controllers.PropertyController.create(req: Request)
+GET     /create                         controllers.PropertyController.create(req: Request)
 +nocsrf
-POST    /addProperty                controllers.PropertyController.addProperty(req: Request)
+POST    /addProperty                    controllers.PropertyController.addProperty(req: Request)
 +nocsrf
-POST    /properties/addAll          controllers.PropertyController.addListOfProperties(req: Request)
+POST    /properties/addAll              controllers.PropertyController.addListOfProperties(req: Request)
 +nocsrf
-GET     /properties                 controllers.PropertyController.getProperty()
+GET     /properties                     controllers.PropertyController.getProperty()
+
++nocsrf
+GET     /show/update/:id                controllers.PropertyController.update(id: Long)
++nocsrf
+PUT    /show/update/updateProperty      controllers.PropertyController.updateProperty(req: Request)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file                   controllers.Assets.at(path="/public", file)

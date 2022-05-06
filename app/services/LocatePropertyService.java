@@ -1,5 +1,7 @@
 package services;
 
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 import exceptions.CustomException;
 import models.Property;
 import okhttp3.HttpUrl;
@@ -8,15 +10,18 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.util.Objects;
 
 public class LocatePropertyService {
 
+  private static final Config config = ConfigFactory.load();
+
   private LocatePropertyService() {}
 
-  public static String checkPropertyLocation(Property property) {
+  public static void checkPropertyLocation(Property property) {
     OkHttpClient client = new OkHttpClient();
-    String coordinates = null;
+    String coordinates;
       try {
         HttpUrl url = Objects.requireNonNull(HttpUrl.parse("https://api.geoapify.com/v1/geocode/search")).newBuilder()
             .addQueryParameter("text", property.getStreetNumber() + " "
@@ -24,14 +29,12 @@ public class LocatePropertyService {
                 + property.getCity() + " "
                 + property.getPostalCode() + " "
                 + property.getCountry() + " ")
-            .addQueryParameter("apiKey", "2c9c8f1857eb48cc890bc01477cbe7b8")
+            .addQueryParameter("apiKey", config.getString("geoApifyKey.key"))
             .build();
         Request request = new Request.Builder().url(url).build();
         Response response = client.newCall(request).execute();
-
+        JSONObject json = new JSONObject(Objects.requireNonNull(response.body()).string());
         if (response.code() == 200) {
-          JSONObject json = new JSONObject(Objects.requireNonNull(response.body()).string());
-
           JSONArray results = json.getJSONArray("features");
           JSONObject firstResult = results.getJSONObject(0);
           JSONObject firstResultProperties = firstResult.getJSONObject("properties");
@@ -41,13 +44,9 @@ public class LocatePropertyService {
             double latitude = firstResultProperties.getDouble("lat");
             coordinates = "longitude: " + longitude + " latitude: " + latitude;
             property.setCoordinates(coordinates);
-            firstResultProperties.getString("formatted"); // prints something like "10117 Berlin, Germany"
-            return coordinates;
           }else {
-            return null;
+            property.setCoordinates("Unable to find coordinates!");
           }
-        } else {
-          return "Request error " + response.code() + Objects.requireNonNull(response.body()).string();
         }
       } catch (Exception e) {
         throw new CustomException("Something went wrong while parsing data from url!", e);

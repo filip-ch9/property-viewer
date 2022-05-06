@@ -1,4 +1,4 @@
-function sendDeleteRequest(url , rUrl,token) {
+function sendDeleteRequest(url , rUrl, token) {
     $.ajax({
         url: url,
         method: "DELETE",
