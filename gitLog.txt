@@ -1,3 +1,21 @@
+commit ae55418bff29c5070e4c99295d7f11d613381576
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Fri May 6 14:48:00 2022 +0200
+
+    application.log update
+
+commit 711249bb3bb05eb24758f3c04dee53f0c07686f1
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Fri May 6 14:47:32 2022 +0200
+
+    Made changes to GUI, added newer bootstrap 4.1, and cleaned up issues with sonnarLint
+
+commit 07f7b6f98d485763358c15ade2b2d0b7e7042c9c
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Fri May 6 10:34:00 2022 +0200
+
+    Updated gitLog file
+
 commit c86266f4fd2fce4087880f7b57d3c2d2dd562996
 Author: filip-ch9 <filip.churlevski@gmail.com>
 Date:   Fri May 6 10:32:37 2022 +0200
