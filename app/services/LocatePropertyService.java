@@ -20,9 +20,8 @@ public class LocatePropertyService {
   private LocatePropertyService() {}
 
   public static void checkPropertyLocation(Property property) {
-    OkHttpClient client = new OkHttpClient();
-    String coordinates;
       try {
+        OkHttpClient client = new OkHttpClient();
         HttpUrl url = Objects.requireNonNull(HttpUrl.parse("https://api.geoapify.com/v1/geocode/search")).newBuilder()
             .addQueryParameter("text", property.getStreetNumber() + " "
                 + property.getStreetName() + " "
@@ -34,22 +33,26 @@ public class LocatePropertyService {
         Request request = new Request.Builder().url(url).build();
         Response response = client.newCall(request).execute();
         JSONObject json = new JSONObject(Objects.requireNonNull(response.body()).string());
-        if (response.code() == 200) {
-          JSONArray results = json.getJSONArray("features");
-          JSONObject firstResult = results.getJSONObject(0);
-          JSONObject firstResultProperties = firstResult.getJSONObject("properties");
-          String type = firstResultProperties.getString("result_type");
-          if (type.equals("building")){
-            double longitude = firstResultProperties.getDouble("lon");
-            double latitude = firstResultProperties.getDouble("lat");
-            coordinates = "longitude: " + longitude + " latitude: " + latitude;
-            property.setCoordinates(coordinates);
-          }else {
-            property.setCoordinates("Unable to find coordinates!");
-          }
-        }
+        setCoordinatesFromJson(property, response, json);
       } catch (Exception e) {
         throw new CustomException("Something went wrong while parsing data from url!", e);
       }
+  }
+
+  private static void setCoordinatesFromJson(Property property, Response response, JSONObject json) {
+    if (response.code() == 200) {
+      JSONArray results = json.getJSONArray("features");
+      JSONObject firstResult = results.getJSONObject(0);
+      JSONObject firstResultProperties = firstResult.getJSONObject("properties");
+      String type = firstResultProperties.getString("result_type");
+      if (type.equals("building")){
+        double longitude = firstResultProperties.getDouble("lon");
+        double latitude = firstResultProperties.getDouble("lat");
+        String coordinates = "longitude: " + longitude + " latitude: " + latitude;
+        property.setCoordinates(coordinates);
+      }else {
+        property.setCoordinates("Unable to find coordinates!");
+      }
+    }
   }
 }
