@@ -1,3 +1,51 @@
+commit c86266f4fd2fce4087880f7b57d3c2d2dd562996
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Fri May 6 10:32:37 2022 +0200
+
+    Added update feature, moved api.key to app.conf, updated readme.md and added update template
+
+commit 54779b460c0bfbe2c93f570039aafd69dbcfc1ca
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Fri Feb 18 09:44:51 2022 +0100
+
+    Fixed bug for adding single property, to search for coordinates
+
+commit d9ffd17086c7d83ae7aa47174d3b4e079521b9d5
+Author: Filip Churlevski <76533999+filip-ch9@users.noreply.github.com>
+Date:   Wed Feb 2 13:01:45 2022 +0100
+
+    updated readme
+
+commit ab792c27563f2fe1bd112fee394680af1122cea9
+Author: Filip Churlevski <76533999+filip-ch9@users.noreply.github.com>
+Date:   Tue Feb 1 22:11:00 2022 +0200
+
+    Updated readme
+
+commit c6b04491a98a060fc11c5b303c8ed0a008b05a6a
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Tue Feb 1 18:53:43 2022 +0100
+
+    udpated readme.md
+
+commit 687a76344b860029c278889c365fc6dacf93ffaa
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Tue Feb 1 18:39:58 2022 +0100
+
+    updated readme
+
+commit 7d9f0d68159940dc9ece978486dde0f551ce8015
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Tue Feb 1 18:38:07 2022 +0100
+
+    updated readme.md
+
+commit 95d27f40ebf569c1258165917145c20035d71746
+Author: filip-ch9 <filip.churlevski@gmail.com>
+Date:   Tue Feb 1 18:35:57 2022 +0100
+
+    updated gitLog.txt
+
 commit ed640d0aa756aab71b1bb0685593243c2972bfc5
 Author: filip-ch9 <filip.churlevski@gmail.com>
 Date:   Tue Feb 1 18:34:43 2022 +0100
